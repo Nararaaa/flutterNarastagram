@@ -23,14 +23,23 @@ class FeedContents {
   String profile;
   String textFeed;
   String image;
+
+  void feed() {
+    var info = FeedContents(
+        userName: userName,
+        profile: profile,
+        textFeed: textFeed,
+        image: image);
+  }
 }
 
+/*
 class AA {
 
   void sample() {
-    var info = UserInfo();
-    info.userName = 'aa';
-    info.profile = 'bb';
+    var info3 = UserInfo();
+    info3.userName = 'aa';
+    info3.profile = 'bb';
 
     var info2 = UserInfo()
       ..userName = 'aa'
@@ -38,6 +47,11 @@ class AA {
 
     var infoA = UserInfoA('aa', 'bb');
 
-    var infoB = FeedContents(userName: 'aa', profile: 'dd', textFeed: 'bb', image: 'dd');
+    var info = FeedContents(
+        userName: 'aa',
+        profile: 'dd',
+        textFeed: 'bb',
+        image: 'dd');
   }
 }
+*/

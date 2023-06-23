@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:narastagram/sub_page/narasta_third_sub_page.dart';
 import '../sub_page/narasta_first_sub_page.dart';
 import '../sub_page/narasta_second_sub_page.dart';
 
@@ -26,6 +27,10 @@ class _NaraStaMainPageState extends State<NaraStaMainPage> {
             child: InkWell(
               child: Image.asset('assets/images/narasta_favorite.png'),
               onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const NaraStaThirdSubPage()),);
                 debugPrint('1');
               },
             ),

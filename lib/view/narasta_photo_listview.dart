@@ -1,7 +1,7 @@
 import 'dart:core';
 
 import 'package:flutter/material.dart';
-import 'package:narastagram/view/feed.dart';
+import 'package:narastagram/data/feed.dart';
 import 'narasta_containersview.dart';
 
 
