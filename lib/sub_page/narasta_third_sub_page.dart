@@ -28,11 +28,6 @@ class NaraStaThirdSubPage extends StatelessWidget {
       body: Column(
         children: [
           NaraStaFavoriteListview(),
-          Container(
-            width: 300.0,
-            height: 300.0,
-            color:  Colors.amber,
-          ),
         ],
       ),
     );
