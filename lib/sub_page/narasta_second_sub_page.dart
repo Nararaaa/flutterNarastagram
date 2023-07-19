@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:narastagram/view/narasta_photo_gridview.dart';
+import 'package:narastagram/view/narasta_secondpg_gridview.dart';
 
 class NaraStaSecondSubPage extends StatelessWidget {
   const NaraStaSecondSubPage({Key? key}) : super(key: key);

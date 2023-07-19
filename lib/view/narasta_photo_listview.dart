@@ -2,7 +2,7 @@ import 'dart:core';
 
 import 'package:flutter/material.dart';
 import 'package:narastagram/data/feed.dart';
-import 'narasta_containersview.dart';
+import 'narasta_firstpg_containersview.dart';
 
 
 class NaraStaPhotoListview extends StatefulWidget {

@@ -1,21 +1,24 @@
 class FavoriteList {
   String favoriteDate;
-  String favoriteContents;
-  String? favoriteContent;
+  String favoriteContent;
+  String? favoriteContents;
+  String? profileImage;
 
   //생성자
   FavoriteList({
+    this.profileImage,
     required this.favoriteDate,
-    required this.favoriteContents,
-    this.favoriteContent,
+    required this.favoriteContent,
+    this.favoriteContents,
   });
 
 
   void favoriteList() {
     var fvList = FavoriteList(
+      profileImage: profileImage,
       favoriteDate: favoriteDate,
-      favoriteContents: favoriteContents,
       favoriteContent: favoriteContent,
+      favoriteContents: favoriteContents,
     );
   }
 }
