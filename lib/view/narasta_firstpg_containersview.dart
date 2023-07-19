@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 
@@ -115,6 +117,85 @@ class ButtonContainer extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+// 컨텐츠이름 컨테이너 클래스
+class ContentNameContainer extends StatefulWidget {
+  const ContentNameContainer({
+    Key? key,
+    required this.userNameUrl,
+    this.leftMargin,
+    this.topMargin,
+    this.rightMargin,
+    this.bottomMargin,
+  }) : super(key: key);
+  
+  final String userNameUrl;
+  final double? leftMargin;
+  final double? topMargin;
+  final double? rightMargin;
+  final double? bottomMargin;
+
+  @override
+  State<ContentNameContainer> createState() => _ContentNameContainerState();
+}
+
+class _ContentNameContainerState extends State<ContentNameContainer> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        height: 45.0,
+        margin: EdgeInsets.fromLTRB(
+          widget.leftMargin?? 0,
+          widget.topMargin?? 0,
+          widget.rightMargin?? 0,
+          widget.bottomMargin?? 0,
+        ),
+        child: AspectRatio(
+          aspectRatio: 1.5,
+          child: Text(
+            widget.userNameUrl,
+            textScaleFactor: 1.0,
+            style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// 컨텐츠텍스트컨테이너
+class ContentTextContainer extends StatelessWidget {
+  const ContentTextContainer({
+    Key? key,
+    required this.textContentUrl,
+    this.leftMargin,
+    this.topMargin,
+    this.rightMargin,
+    this.bottomMargin,
+  }) : super(key: key);
+
+  final String textContentUrl;
+  final double? leftMargin;
+  final double? topMargin;
+  final double? rightMargin;
+  final double? bottomMargin;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 200.0,
+      height: 100.0,
+      margin: EdgeInsets.fromLTRB(
+        leftMargin?? 0,
+        topMargin?? 0,
+        rightMargin?? 0,
+        bottomMargin?? 0,
+      ),
+      child: Text(textContentUrl),
     );
   }
 }

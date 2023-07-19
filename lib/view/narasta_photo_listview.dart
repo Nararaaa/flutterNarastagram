@@ -19,25 +19,25 @@ class _NaraStaPhotoListviewState extends State<NaraStaPhotoListview> {
     FeedContents(
       userName: 'userName',
       profile: 'assets/images/avatar.png',
-      textFeed: '라라라라',
+      textFeed: '그림이 너무 이쁘다',
       image: 'https://picsum.photos/id/222/500/500',
     ),
     FeedContents(
       userName: 'fofo',
       profile: 'assets/images/narasta_penguin2.png',
-      textFeed: '라라라라',
+      textFeed: '안녕하세요',
       image: 'https://picsum.photos/id/555/500/500',
     ),
     FeedContents(
       userName: 'nono',
       profile: 'assets/images/narasta_penguin.png',
-      textFeed: '라라라라',
+      textFeed: '룰루랄라 즐겁다',
       image: 'https://picsum.photos/id/444/500/500',
     ),
     FeedContents(
       userName: 'momo',
       profile: 'assets/images/narasta_dog.png',
-      textFeed: '라라라라',
+      textFeed: 'I am so happy',
       image: 'https://picsum.photos/id/444/500/500',
     ),
   ];
@@ -102,34 +102,47 @@ class PhotoListItem extends StatelessWidget {
                leftMargin: 10.0,
                topMargin: 10.0,
                rightMargin: 5.0,
-               bottomMargin: 20.0,
+               bottomMargin: 5.0,
                buttonListUrl: buttonList[0],
              ),
             ButtonContainer(
               leftMargin: 0,
               topMargin: 10.0,
               rightMargin: 5.0,
-              bottomMargin: 20.0,
+              bottomMargin: 5.0,
               buttonListUrl: buttonList[1],
             ),
             ButtonContainer(
               leftMargin: 0,
               topMargin: 10.0,
               rightMargin: 5.0,
-              bottomMargin: 20.0,
+              bottomMargin: 5.0,
               buttonListUrl: buttonList[2],
             ),
           ],
         ),
+        // 좋아요 갯수 부분
+
         // 텍스트 부분
-        Container(
-          width: 500.0,
-          margin: const EdgeInsets.fromLTRB(5.0, 0, 0,0),
-          child: SizedBox(
-            width: 100.0,
-            height: 100.0,
-            child: Text(data.textFeed),
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ContentNameContainer(
+              leftMargin: 7.0,
+              topMargin: 0,
+              rightMargin: 2.0,
+              bottomMargin: 0,
+              userNameUrl: data.userName,
+            ),
+            ContentTextContainer(
+                leftMargin: 0,
+                topMargin: 0,
+                rightMargin: 2.0,
+                bottomMargin: 0,
+                textContentUrl: data.textFeed,
+            ),
+          ],
         ),
       ],
     );
@@ -137,3 +150,13 @@ class PhotoListItem extends StatelessWidget {
 }
 
 
+
+/*Container(
+          width: 500.0,
+          margin: const EdgeInsets.fromLTRB(5.0, 0, 0,0),
+          child: SizedBox(
+            width: 100.0,
+            height: 100.0,
+            child: Text(data.textFeed),
+          ),
+        ),*/
