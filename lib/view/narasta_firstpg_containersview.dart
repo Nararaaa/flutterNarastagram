@@ -68,6 +68,64 @@ class _ProfileNameContainerState extends State<ProfileNameContainer> {
   }
 }
 
+class FavoriteButtonContainer extends StatefulWidget {
+   FavoriteButtonContainer({
+    Key? key,
+    this.leftMargin,
+    this.topMargin,
+    this.rightMargin,
+    this.bottomMargin,
+    required this.count,
+    required this.buttonListUrl,
+  }) : super(key: key);
+
+  final double? leftMargin;
+  final double? topMargin;
+  final double? rightMargin;
+  final double? bottomMargin;
+  final String buttonListUrl;
+  late int count;
+
+
+  @override
+  State<FavoriteButtonContainer> createState() => _FavoriteButtonContainerState();
+}
+
+class _FavoriteButtonContainerState extends State<FavoriteButtonContainer> {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Container(
+          width: 30.0,
+          height: 30.0,
+          padding: const EdgeInsets.all(2.0),
+          margin: EdgeInsets.fromLTRB(
+            widget.leftMargin?? 0,
+            widget.topMargin?? 0,
+            widget.rightMargin?? 0,
+            widget.bottomMargin?? 0,
+          ),
+          child: SizedBox(
+            width: 30.0,
+            height: 30.0,
+            // 이미지 넣는 버튼
+            child: InkWell(
+              child: Image.asset(widget.buttonListUrl),
+              onTap: (){
+                setState(() {
+                  widget.count++;
+                });
+                debugPrint('좋아요버튼');
+              },
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
 
 
 
@@ -121,6 +179,7 @@ class ButtonContainer extends StatelessWidget {
   }
 }
 
+
 // 컨텐츠이름 컨테이너 클래스
 class ContentNameContainer extends StatefulWidget {
   const ContentNameContainer({
@@ -167,7 +226,7 @@ class _ContentNameContainerState extends State<ContentNameContainer> {
   }
 }
 
-// 컨텐츠텍스트컨테이너
+// 컨텐츠 텍스트 컨테이너 클래스
 class ContentTextContainer extends StatelessWidget {
   const ContentTextContainer({
     Key? key,
@@ -199,3 +258,4 @@ class ContentTextContainer extends StatelessWidget {
     );
   }
 }
+

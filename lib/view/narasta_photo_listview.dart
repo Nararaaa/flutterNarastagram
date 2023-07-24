@@ -73,7 +73,7 @@ class PhotoListItem extends StatelessWidget {
     'assets/images/narasta_chat.png',
     'assets/images/narasta_mesege.png',
   ];
-  
+  int count = 0;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -98,13 +98,14 @@ class PhotoListItem extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-             ButtonContainer(
-               leftMargin: 10.0,
-               topMargin: 10.0,
-               rightMargin: 5.0,
-               bottomMargin: 5.0,
-               buttonListUrl: buttonList[0],
-             ),
+            FavoriteButtonContainer(
+              count: count,
+              leftMargin: 10.0,
+              topMargin: 10.0,
+              rightMargin: 5.0,
+              bottomMargin: 5.0,
+              buttonListUrl: buttonList[0],
+            ),
             ButtonContainer(
               leftMargin: 0,
               topMargin: 10.0,
@@ -122,6 +123,14 @@ class PhotoListItem extends StatelessWidget {
           ],
         ),
         // 좋아요 갯수 부분
+        Container(
+          width: 100.0,
+          height: 30.0,
+          child: Text(
+            '좋아요 $count개'
+          ),
+
+        ),
 
         // 텍스트 부분
         Row(
